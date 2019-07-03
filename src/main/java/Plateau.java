@@ -19,7 +19,7 @@ public class Plateau {
     }
 
     public int positionAtEastOf(int i) {
-        if(i == width) {
+        if(i + 1 == width) {
             return 0;
         }
         return i +  1;
