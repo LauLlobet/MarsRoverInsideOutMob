@@ -1,15 +1,20 @@
 public class Plateau {
+    public static final int OUTSIDE_OF_LOWER_BOUND = -1;
+    public static final int MOVE_WEST = -1;
     private int width;
 
     public Plateau(int width) {
         this.width = width;
     }
 
-    public int positionAtWest(int position) {
-        int result = position - 1;
-        if(result == -1){
-            result = width - 1;
+    public int positionAtWestOf(int position) {
+        return wrapAroundIfNecesary(position + MOVE_WEST);
+    }
+
+    private int wrapAroundIfNecesary(int position) {
+        if(position == OUTSIDE_OF_LOWER_BOUND){
+            position = width - 1;
         }
-        return result;
+        return position;
     }
 }
