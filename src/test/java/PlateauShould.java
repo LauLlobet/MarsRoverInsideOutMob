@@ -38,4 +38,14 @@ public class PlateauShould {
 
         assertEquals(0,nextposition);
     }
+
+    @Test
+    public void provide_position_at_East_from_another_point() {
+        Plateau plateau = new Plateau(10);
+
+        int nextposition = plateau.positionAtEastOf(2);
+
+        assertEquals(3, nextposition);
+    }
+
 }
