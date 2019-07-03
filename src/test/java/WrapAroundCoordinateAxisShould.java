@@ -7,7 +7,7 @@ public class WrapAroundCoordinateAxisShould {
     public void provide_postion_at_West() {
         WrapAroundCoordinateAxis wrapAroundCoordinateAxis = new WrapAroundCoordinateAxis(10);
 
-        int nextpostion = wrapAroundCoordinateAxis.positionAtWestOf(1);
+        int nextpostion = wrapAroundCoordinateAxis.decrease(1);
 
         assertEquals(0, nextpostion);
     }
@@ -16,7 +16,7 @@ public class WrapAroundCoordinateAxisShould {
     public void provide_position_at_West_from_another_point() {
         WrapAroundCoordinateAxis wrapAroundCoordinateAxis = new WrapAroundCoordinateAxis(10);
 
-        int nextposition = wrapAroundCoordinateAxis.positionAtWestOf(2);
+        int nextposition = wrapAroundCoordinateAxis.decrease(2);
 
         assertEquals(1, nextposition);
     }
@@ -25,7 +25,7 @@ public class WrapAroundCoordinateAxisShould {
     public void wrap_around_postions() {
         WrapAroundCoordinateAxis wrapAroundCoordinateAxis = new WrapAroundCoordinateAxis(5);
 
-        int nextposition = wrapAroundCoordinateAxis.positionAtWestOf(0);
+        int nextposition = wrapAroundCoordinateAxis.decrease(0);
 
         assertEquals(4,nextposition);
     }
@@ -34,7 +34,7 @@ public class WrapAroundCoordinateAxisShould {
     public void wrap_around_position_when_bigger_than_with() {
         WrapAroundCoordinateAxis wrapAroundCoordinateAxis = new WrapAroundCoordinateAxis(5);
 
-        int nextposition = wrapAroundCoordinateAxis.positionAtEastOf(4);
+        int nextposition = wrapAroundCoordinateAxis.increase(4);
 
         assertEquals(0,nextposition);
     }
@@ -43,7 +43,7 @@ public class WrapAroundCoordinateAxisShould {
     public void provide_position_at_East_from_another_point() {
         WrapAroundCoordinateAxis wrapAroundCoordinateAxis = new WrapAroundCoordinateAxis(10);
 
-        int nextposition = wrapAroundCoordinateAxis.positionAtEastOf(2);
+        int nextposition = wrapAroundCoordinateAxis.increase(2);
 
         assertEquals(3, nextposition);
     }

@@ -9,14 +9,14 @@ public class PlateauShould {
     @Test
     public void provide_postions_Next_to_it() {
 
-        Plateau plateau = new Plateau(3,3);
+        Plateau plateau = new Plateau(3,3);//0
 
-        plateau.moveNord();
-        plateau.moveNord();
-        plateau.moveNord();
-        plateau.moveNord();
+        plateau.moveNord();//1
+        plateau.moveNord();//2
+        plateau.moveNord();//0
+        plateau.moveNord();//1
 
         String actualPosition = plateau.getPosition();
-        assertEquals("0,0",actualPosition);
+        assertEquals("0,1",actualPosition);
     }
 }
