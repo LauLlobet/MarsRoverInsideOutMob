@@ -1,5 +1,5 @@
 public class Plateau {
     public int positionAtWest(int position) {
-        return 0;
+        return position - 1;
     }
 }
