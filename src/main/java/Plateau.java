@@ -17,4 +17,8 @@ public class Plateau {
         }
         return position;
     }
+
+    public int positionAtEastOf(int i) {
+        return 0;
+    }
 }

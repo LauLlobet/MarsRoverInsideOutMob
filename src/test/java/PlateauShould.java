@@ -29,4 +29,13 @@ public class PlateauShould {
 
         assertEquals(4,nextposition);
     }
+
+    @Test
+    public void wrap_around_position_when_bigger_than_with() {
+        Plateau plateau = new Plateau(5);
+
+        int nextposition = plateau.positionAtEastOf(4);
+
+        assertEquals(0,nextposition);
+    }
 }
