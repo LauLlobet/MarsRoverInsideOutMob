@@ -1,6 +1,7 @@
 public class Plateau {
     public static final int OUTSIDE_OF_LOWER_BOUND = -1;
     public static final int MOVE_WEST = -1;
+    public static final int MOVE_EAST = 1;
     private int width;
 
     public Plateau(int width) {
@@ -11,17 +12,17 @@ public class Plateau {
         return wrapAroundIfNecesary(position + MOVE_WEST);
     }
 
+    public int positionAtEastOf(int position) {
+        return wrapAroundIfNecesary(position + MOVE_EAST);
+    }
+
     private int wrapAroundIfNecesary(int position) {
         if(position == OUTSIDE_OF_LOWER_BOUND){
             position = width - 1;
         }
-        return position;
-    }
-
-    public int positionAtEastOf(int i) {
-        if(i + 1 == width) {
-            return 0;
+        if(position == width) {
+            position = 0;
         }
-        return i +  1;
+        return position;
     }
 }
