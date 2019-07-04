@@ -4,31 +4,31 @@ public class Rover {
     public static final int EAST = 3;
     public static final int NORTH = 0;
 
-    private PositionManager positionManager;
+    private PositionInPlateau positionInPlateau;
     private int face = 0;
 
-    public Rover(PositionManager positionManager) {
-        this.positionManager = positionManager;
+    public Rover(PositionInPlateau positionInPlateau) {
+        this.positionInPlateau = positionInPlateau;
     }
 
     public String getPosition() {
-        return positionManager.getPosition();
+        return positionInPlateau.getPosition();
     }
 
     public void move() {
         if(face == WEST) {
-            positionManager.moveWest();
+            positionInPlateau.moveWest();
             return;
         }
         if(face == SOUTH) {
-            positionManager.moveSouth();
+            positionInPlateau.moveSouth();
             return;
         }
         if(face == EAST){
-            positionManager.moveEast();
+            positionInPlateau.moveEast();
             return;
         }
-        positionManager.moveNorth();
+        positionInPlateau.moveNorth();
     }
 
     public void turnLeft() {

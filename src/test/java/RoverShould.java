@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 public class RoverShould {
     @Test
     public void move(){
-        Rover rover = new Rover(new PositionManager(10,10));
+        Rover rover = new Rover(new PositionInPlateau(10,10, 0, 0));
 
         rover.move(); // N 0 1
         rover.move(); // N 0 2
