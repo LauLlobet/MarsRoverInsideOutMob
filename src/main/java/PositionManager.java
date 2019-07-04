@@ -21,8 +21,7 @@ public class PositionManager {
         yPosition = increase;
     }
 
-    public String getPosition()
-    {
+    public String getPosition() {
         return xPosition + "," + yPosition;
     }
 
@@ -31,7 +30,7 @@ public class PositionManager {
         if(obstacles.contains(xPosition+","+decrease)){
             return;
         }
-        yPosition = wrappedYAxis.decrease(yPosition);
+        yPosition = decrease;
     }
 
     public void moveEast() {
@@ -40,7 +39,6 @@ public class PositionManager {
             return;
         }
         xPosition = increase;
-
     }
 
     public void moveWest() {
@@ -48,7 +46,7 @@ public class PositionManager {
         if(obstacles.contains(decrease+","+yPosition)){
             return;
         }
-        xPosition = wrappedXAxis.decrease(xPosition);
+        xPosition = decrease;
     }
 
     public void setObstacle(String s) {

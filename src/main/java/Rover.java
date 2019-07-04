@@ -1,4 +1,9 @@
 public class Rover {
+    public static final int WEST = 1;
+    public static final int SOUTH = 2;
+    public static final int EAST = 3;
+    public static final int NORTH = 0;
+
     private PositionManager positionManager;
     private int face = 0;
 
@@ -11,15 +16,15 @@ public class Rover {
     }
 
     public void move() {
-        if(face == 1) {
+        if(face == WEST) {
             positionManager.moveWest();
             return;
         }
-        if(face ==2) {
+        if(face == SOUTH) {
             positionManager.moveSouth();
             return;
         }
-        if(face == 3){
+        if(face == EAST){
             positionManager.moveEast();
             return;
         }
@@ -28,15 +33,15 @@ public class Rover {
 
     public void turnLeft() {
         face++;
-        if(face > 3){
-            face = 0;
+        if(face > EAST){
+            face = NORTH;
         }
     }
 
     public void turnRight() {
         face--;
-        if(face < 0){
-            face = 3;
+        if(face < NORTH){
+            face = EAST;
         }
     }
 }
