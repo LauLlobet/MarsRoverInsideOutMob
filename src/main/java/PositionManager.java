@@ -18,7 +18,7 @@ public class PositionManager {
         if(obstacles.contains(xPosition+","+increase)){
             return;
         }
-        yPosition = wrappedYAxis.increase(yPosition);
+        yPosition = increase;
     }
 
     public String getPosition()
@@ -40,6 +40,10 @@ public class PositionManager {
     }
 
     public void moveWest() {
+        int decrease = wrappedXAxis.decrease(xPosition);
+        if(obstacles.contains(decrease+","+yPosition)){
+            return;
+        }
         xPosition = wrappedXAxis.decrease(xPosition);
     }
 
