@@ -1,6 +1,6 @@
 public class Rover {
     private PositionManager positionManager;
-    private boolean isTurnLeft = false;
+    private int face = 0;
 
     public Rover(PositionManager positionManager) {
         this.positionManager = positionManager;
@@ -11,14 +11,18 @@ public class Rover {
     }
 
     public void move() {
-        if(isTurnLeft) {
+        if(face == 1) {
             positionManager.moveWest();
+            return;
+        }
+        if(face ==2) {
+            positionManager.moveSouth();
             return;
         }
         positionManager.moveNorth();
     }
 
     public void turnLeft() {
-        isTurnLeft = true;
+        face++;
     }
 }
