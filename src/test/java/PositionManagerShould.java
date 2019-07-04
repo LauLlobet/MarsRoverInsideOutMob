@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import javax.swing.*;
+
 import static org.junit.Assert.*;
 
 public class PositionManagerShould {
@@ -30,5 +32,20 @@ public class PositionManagerShould {
 
         String actualPosition = positionManager.getPosition();
         assertEquals("3,0",actualPosition);
+    }
+
+
+    @Test
+    public void not_move_if_theres_an_obstacle() {
+
+        PositionManager positionManager = new PositionManager(10,10);
+
+        positionManager.setObstacle("3,0");
+        positionManager.moveEast(); // 1,0
+        positionManager.moveEast(); // 2,0
+        positionManager.moveEast(); // Bump !
+
+
+        assertEquals("2,0",positionManager.getPosition());
     }
 }
