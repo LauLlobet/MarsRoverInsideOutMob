@@ -50,7 +50,7 @@ public class PositionManagerShould {
         assertEquals("0,0",positionManager.getPosition());
         positionManager.moveWest();
         assertEquals("0,0",positionManager.getPosition());
-       // positionManager.moveSouth();
-        //assertEquals("0,0",positionManager.getPosition());
+        positionManager.moveSouth();
+        assertEquals("0,0",positionManager.getPosition());
     }
 }

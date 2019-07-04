@@ -27,6 +27,10 @@ public class PositionManager {
     }
 
     public void moveSouth() {
+        int decrease = wrappedYAxis.decrease(yPosition);
+        if(obstacles.contains(xPosition+","+decrease)){
+            return;
+        }
         yPosition = wrappedYAxis.decrease(yPosition);
     }
 
