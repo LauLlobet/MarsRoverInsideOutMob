@@ -8,8 +8,9 @@ public class RoverShould {
         Rover rover = new Rover(new PositionManager(10,10));
 
         rover.move();
+        rover.move();
 
         String position = rover.getPosition();
-        assertEquals("0,1",position);
+        assertEquals("0,2",position);
     }
 }
