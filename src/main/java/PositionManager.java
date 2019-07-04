@@ -1,15 +1,15 @@
-public class RoverPosition {
+public class PositionManager {
     private int yPosition = 0;
     private WrapAroundCoordinateAxis wrappedYAxis ;
     private int xPosition = 0;
     private WrapAroundCoordinateAxis wrappedXAxis;
 
-    public RoverPosition(int width, int height) {
+    public PositionManager(int width, int height) {
         wrappedYAxis = new WrapAroundCoordinateAxis(height);
         wrappedXAxis = new WrapAroundCoordinateAxis(width);
     }
 
-    public void moveNord() {
+    public void moveNorth() {
         yPosition = wrappedYAxis.increase(yPosition);
     }
 
