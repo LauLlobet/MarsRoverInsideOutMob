@@ -19,6 +19,8 @@ public class RoverShould {
         rover.turnLeft(); // E
         rover.turnLeft(); // N
         rover.move();// N 8 2
-        assertEquals("8,2", rover.getPosition());
+        rover.turnRight(); // E
+        rover.move();// E 9 2
+        assertEquals("9,2", rover.getPosition());
     }
 }

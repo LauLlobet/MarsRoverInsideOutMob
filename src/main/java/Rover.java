@@ -35,5 +35,8 @@ public class Rover {
 
     public void turnRight() {
         face--;
+        if(face < 0){
+            face = 3;
+        }
     }
 }
