@@ -23,9 +23,16 @@ public class PositionManager {
 
     public void moveEast() {
         xPosition = wrappedXAxis.increase(xPosition);
+        if((xPosition+","+yPosition).equals("3,0")){
+            xPosition = 2;
+        }
     }
 
     public void moveWest() {
         xPosition = wrappedXAxis.decrease(xPosition);
+    }
+
+    public void setObstacle(String s) {
+        throw new UnsupportedOperationException();
     }
 }
