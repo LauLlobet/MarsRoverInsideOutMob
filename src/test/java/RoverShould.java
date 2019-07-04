@@ -7,14 +7,18 @@ public class RoverShould {
     public void move(){
         Rover rover = new Rover(new PositionManager(10,10));
 
-        rover.move();
-        rover.move();
-        rover.turnLeft();
-        rover.move();
-        rover.turnLeft();
-        rover.move();
-
-        String position = rover.getPosition();
-        assertEquals("9,1",position);
+        rover.move(); // N 0 1
+        rover.move(); // N 0 2
+        rover.turnLeft(); // W
+        rover.move(); // W 9 2
+        rover.turnLeft(); // S
+        rover.move(); // S 9 1
+        rover.turnRight(); // W
+        rover.move(); // W 8 1
+        rover.turnLeft(); // S
+        rover.turnLeft(); // E
+        rover.turnLeft(); // N
+        rover.move();// N 8 2
+        assertEquals("8,2", rover.getPosition());
     }
 }
