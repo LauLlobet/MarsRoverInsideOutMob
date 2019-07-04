@@ -9,8 +9,10 @@ public class RoverShould {
 
         rover.move();
         rover.move();
+        rover.turnLeft();
+        rover.move();
 
         String position = rover.getPosition();
-        assertEquals("0,2",position);
+        assertEquals("9,2",position);
     }
 }
