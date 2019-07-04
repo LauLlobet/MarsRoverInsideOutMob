@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class PositionManager {
     private int yPosition = 0;
     private WrapAroundCoordinateAxis wrappedYAxis ;
     private int xPosition = 0;
     private WrapAroundCoordinateAxis wrappedXAxis;
+    private List obstacles = new ArrayList();
 
     public PositionManager(int width, int height) {
         wrappedYAxis = new WrapAroundCoordinateAxis(height);
@@ -10,11 +14,16 @@ public class PositionManager {
     }
 
     public void moveNorth() {
+        int increase = wrappedYAxis.increase(yPosition);
+        if(obstacles.contains(xPosition+","+increase)){
+            return;
+        }
         yPosition = wrappedYAxis.increase(yPosition);
     }
 
-    public String getPosition() {
-        return xPosition+","+ yPosition;
+    public String getPosition()
+    {
+        return xPosition + "," + yPosition;
     }
 
     public void moveSouth() {
@@ -22,10 +31,12 @@ public class PositionManager {
     }
 
     public void moveEast() {
-        xPosition = wrappedXAxis.increase(xPosition);
-        if((xPosition+","+yPosition).equals("3,0")){
-            xPosition = 2;
+        int increase = wrappedXAxis.increase(xPosition);
+        if(obstacles.contains(increase +","+yPosition)){
+            return;
         }
+        xPosition = increase;
+
     }
 
     public void moveWest() {
@@ -33,6 +44,6 @@ public class PositionManager {
     }
 
     public void setObstacle(String s) {
-        throw new UnsupportedOperationException();
+        obstacles.add(s);
     }
 }

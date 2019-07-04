@@ -40,12 +40,17 @@ public class PositionManagerShould {
 
         PositionManager positionManager = new PositionManager(10,10);
 
-        positionManager.setObstacle("3,0");
+        positionManager.setObstacle("1,0");
+        positionManager.setObstacle("0,1");
+        positionManager.setObstacle("9,0");
+        positionManager.setObstacle("0,9");
         positionManager.moveEast(); // 1,0
-        positionManager.moveEast(); // 2,0
-        positionManager.moveEast(); // Bump !
-
-
-        assertEquals("2,0",positionManager.getPosition());
+        assertEquals("0,0",positionManager.getPosition());
+        positionManager.moveNorth();
+        assertEquals("0,0",positionManager.getPosition());
+        ///positionManager.moveWest();
+        //assertEquals("0,0",positionManager.getPosition());
+       // positionManager.moveSouth();
+        //assertEquals("0,0",positionManager.getPosition());
     }
 }
