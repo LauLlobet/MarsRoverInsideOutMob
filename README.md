@@ -1,18 +1,19 @@
 # Mars Rover Kata mob programming
 
-Done at @codurance with 6 craftpeople and apprentices.
-
 ![Mars rover](http://cliparts101.com/files/474/AE856F30D037A0B9D5CEF5E55E7AE23B/Mars_Exploration_Rover.png)
 
 
-##Focus:
+Done at @codurance with 6 craftpeople and apprentices.
+
+
+## Focus:
 
 - TDD inside out
 - [Test && commit || revert ](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
 - Naming
 - Baby steps
 
-##Results:
+## Results:
 
 - One "all green commit" every 10 minutes avg.
 - No use of class Coordinate *(int x,int y)* at any point (no pun intended).
