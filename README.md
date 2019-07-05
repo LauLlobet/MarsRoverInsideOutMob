@@ -1,17 +1,18 @@
-## Mars Rover Kata mob programming
+# Mars Rover Kata mob programming
 
 Done at @codurance with 6 craftpeople and apprentices.
 
 ![Mars rover](http://cliparts101.com/files/474/AE856F30D037A0B9D5CEF5E55E7AE23B/Mars_Exploration_Rover.png)
 
-###Focus:
+
+##Focus:
 
 - TDD inside out
 - [Test && commit || revert ](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
 - Naming
 - Baby steps
 
-###Results:
+##Results:
 
 - One "all green commit" every 10 minutes avg.
 - No use of class Coordinate *(int x,int y)* at any point (no pun intended).
@@ -28,7 +29,7 @@ Done at @codurance with 6 craftpeople and apprentices.
 - Not finished with the command+state pattern
 
 
-## Kata content 
+# Kata content 
 	
 	
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
@@ -42,7 +43,7 @@ The rover wraps around if it reaches the end of the grid.
 ## Optional
 The grid may have obstacles. If a given sequence of commands encounters an obstacle, the rover moves up to the last possible point and reports the obstacle e.g. O 2 2 N
 
-# Input
+## Input
 The first line of input is the upper-right co-ordinates of the plateau, the lower-left co-ordinates are assumed to be 1,1.
 
 The rest of the input is information pertaining to the rovers that have been deployed. Each rover has two lines of input. The first line gives the rover's starting position, and the second line is a series of instructions telling the rover how to explore the plateau.
@@ -50,10 +51,10 @@ The position is made up of two integers and a letter separated by spaces, corres
 
 Each rover will be finished sequentially, which means that the second rover won't start to move until the first one has finished moving.
 
-# Output
+## Output
 The output for each rover should be its final co-ordinates and heading.
 
-# Example
+## Example
 
 **Input**:
 
